@@ -1,0 +1,128 @@
+@font-face {
+    font-family: Urbana;
+    src: url(../fonts/Urbana.ttf);
+}
+
+@font-face {
+    font-family: Impacted;
+    src: url(../fonts/Impacted2.ttf);
+}
+
+html, body {
+    background-color: black;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p, h1, h2 {
+    margin: 0;
+}
+
+nav {
+    > a {
+        color: darkgrey;
+    }
+
+    > a:hover {
+        text-decoration: underline;
+    }
+}
+
+header {
+    display: grid;
+    width: 1fr;
+
+    * {
+        grid-row: 1;
+        grid-column: 1;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+#secret {
+    color: black;
+}
+
+#title {
+    display: inline;
+    font-family: Impacted;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    width: fit-content;
+
+    * {
+        height: fit-content;
+    }
+
+    h1 {
+        font-size: 4em;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 3em;
+        font-family: Urbana;
+    }
+}
+
+#links {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.icon-link {
+    color: lightgrey;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+
+    * {
+        height: fit-content;
+    }
+
+    img {
+        width: 19px;
+    }
+}
+
+.icon-link:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+#date {
+    color: grey;
+}
+
+#copyright {
+    color: grey;
+    justify-self: flex-end;
+    font-size: small;
+}

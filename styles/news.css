@@ -1,0 +1,43 @@
+main {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 10px 0 50px 25%;
+    gap: 40px;
+    max-width: 40%;
+    width: fit-content;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#articles {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    p {
+        color: lightgrey;
+    }
+}
+
+.article:hover {
+    > div > h2 {
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        margin-left: 0;
+        max-width: unset;
+    }
+}

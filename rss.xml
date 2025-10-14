@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>DJPICKA.com</title>
+        <description>Bolje od Indexa!</description>
+        <link>https://djpicka.com/rss.xml</link>
+        <language>hr</language>
+
+        <item>
+            <title>DJPICKA.com je online!</title>
+            <description>
+            <![CDATA[
+		        <p>DJ Picka sada ima službenu web stranicu <a href="https://djpicka.com">DJPICKA.com</a>, nema više zajebancije.</p>
+            ]]>
+            </description>
+            <link>https://djpicka.com/pages/articles/djpicka_online.html</link>
+            <pubDate>Tue, 17 Jun 2025 21:15:00 +0200</pubDate>
+        </item>
+
+    </channel>
+</rss>

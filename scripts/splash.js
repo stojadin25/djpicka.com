@@ -3,7 +3,7 @@ const SPLASHES = [
     "Drkam svaki dan",
     "Red-pillan i baziran",
     "Moje ime je Stojadin!!!",
-    "Napaljena Jovana iz Novog Sada traži muškarce za zabavu",
+    "Napaljena Jovana u tvojoj blizini",
     "INFOWARS.COM",
 ];
 

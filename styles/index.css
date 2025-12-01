@@ -62,7 +62,8 @@ footer {
 }
 
 #secret {
-    color: black;
+    color: white;
+    min-height: 20px;
 }
 
 #title {

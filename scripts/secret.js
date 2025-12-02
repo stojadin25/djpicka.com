@@ -1,4 +1,4 @@
-const SPLASHES = [
+const MESSAGES = [
     "Jebi se",
     "Drkam svaki dan",
     "Red-pillan i baziran",
@@ -7,64 +7,53 @@ const SPLASHES = [
     "INFOWARS.COM",
 ];
 
-let splash;
+let message;
 let i;
 let intervalId;
 let timeoutId;
 
-
-function chooseRandomSplash() {
-    let randomSplash;
+function chooseRandomMessage() {
+    let randomMessage;
 
     do {
-        randomSplash = SPLASHES[Math.floor(Math.random() * SPLASHES.length)];
-    } while (splash == randomSplash);
+        randomMessage = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
+    } while (message == randomMessage);
 
-    splash = randomSplash;
+    message = randomMessage;
 }
 
-function showLetter() {
-    document.getElementById("secret").innerHTML = splash.substring(0, i);
+function revealSubstring(direction) {
+    document.getElementById("secret").innerHTML = message.substring(0, i);
 
-    if (i == splash.length) {
+    if (direction > 0 && i == message.length) {
         clearInterval(intervalId);
         intervalId = null;
-        timeoutId = setTimeout(concealSplash, 2000);
+        timeoutId = setTimeout(hide, 2000);
+    } else if (direction < 0 && i == 0) {
+        clearInterval(intervalId);
+        intervalId = null;
+        timeoutId = setTimeout(reveal, 2000);
     } else {
-        i += 1;
+        i += direction;
     }
 }
 
-function revealSplash() {
-    timeoutId = null;
-    chooseRandomSplash();
+function reveal() {
+    chooseRandomMessage();
     i = 0;
-    intervalId ??= setInterval(showLetter, 50);
+    intervalId ??= setInterval(revealSubstring, 50, 1);
 }
 
-function hideLetter() {
-    document.getElementById("secret").innerHTML = splash.substring(0, i);
-
-    if (i == 0) {
-        clearInterval(intervalId);
-        intervalId = null;
-        timeoutId = setTimeout(revealSplash, 2000);
-    } else {
-        i -= 1;
-    }
+function hide() {
+    intervalId ??= setInterval(revealSubstring, 50, -1);
 }
 
-function concealSplash() {
-    timeoutId = null;
-    intervalId ??= setInterval(hideLetter, 50);
-}
-
-timeoutId = setTimeout(revealSplash, 30000);
+revealTimeoutId = setTimeout(reveal, 30000);
 
 onmousemove = (event) => {
     document.getElementById("secret").innerHTML = "";
     clearInterval(intervalId);
-    clearTimeout(timeoutId);
+    clearTimeout(revealTimeoutId);
     intervalId = null;
-    timeoutId = setTimeout(revealSplash, 30000);
+    revealTimeoutId = setTimeout(reveal, 30000);
 }
